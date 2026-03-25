@@ -2,9 +2,10 @@
 <html>
   <head>
     <script>
-      // Save the current path and redirect to root
-      sessionStorage.setItem("redirect", location.pathname + location.search);
-      location.replace("/");
+      var base = '/easy-portfolio';
+      var path = location.pathname.replace(base, '') || '/';
+      sessionStorage.setItem("redirect", base + path + location.search);
+      location.replace(base + '/');
     </script>
   </head>
 </html>
